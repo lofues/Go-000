@@ -46,10 +46,10 @@
 
 4. 领域层代码实现
       
-      var (
-        ErrUserNotFound = errors.New("用户不存在")
-        ErrSystem = errors.New("系统出现异常,请稍后再试")
-      )
+       var (
+            ErrUserNotFound = errors.New("用户不存在")
+            ErrSystem = errors.New("系统出现异常,请稍后再试")
+        )
       
        // 领域对象
        type User struct {
@@ -81,8 +81,8 @@
        	        return nil, ErrUserNotFound
        	    }
        	    // 记录未知错误日志，便于追踪问题
-            _ = logger.Log("err", err.Error())
-       		return nil, ErrSystem
+                    _ = logger.Log("err", err.Error())
+       	     return nil, ErrSystem
        	}
        	// 转换成领域层对象返回
        	u := ru.ToUser()
