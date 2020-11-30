@@ -81,7 +81,7 @@
        	        return nil, ErrUserNotFound
        	    }
        	    // 记录未知错误日志，便于追踪问题
-                    _ = logger.Log("err", err.Error())
+                    _ = logger.Fprintf("err:%+v\n", err)
        	     return nil, ErrSystem
        	}
        	// 转换成领域层对象返回
